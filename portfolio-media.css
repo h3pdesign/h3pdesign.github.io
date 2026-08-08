@@ -596,6 +596,28 @@
 .notes-grid h2 { max-width: 470px; margin: 30px 0 0; font: 500 clamp(24px, 3vw, 35px)/1.02 Fraunces, serif; letter-spacing: -0.055em; }
 .notes-grid p { max-width: 430px; margin: 12px 0 0; color: var(--body-copy); font-size: 14px; line-height: 1.5; }
 
+.support { padding-top: 0; }
+.support-header { display: grid; grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr); gap: clamp(28px, 7vw, 100px); padding: clamp(36px, 6vw, 72px); border-radius: 14px 14px 0 0; background: var(--panel); }
+.support-header h2 { margin: 0; font: 500 clamp(40px, 5vw, 70px)/.94 Fraunces, serif; letter-spacing: -0.07em; }
+.support-header h2 em { color: var(--emphasis); font-style: italic; }
+.support-header > div:last-child { max-width: 590px; color: var(--body-copy); font-size: 15px; line-height: 1.6; }
+.support-header > div:last-child p { margin: 0 0 16px; }
+.support-header > div:last-child p:last-child { margin-bottom: 0; }
+.support-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; padding: 13px; background: var(--panel); }
+.support-card { --support-accent: var(--orange); position: relative; display: flex; min-height: 240px; flex-direction: column; padding: 22px; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: var(--cream); color: var(--ink); text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.support-card::before { position: absolute; top: 0; right: 0; left: 0; height: 4px; background: var(--support-accent); content: ''; }
+.support-card.sponsors { --support-accent: #db61a2; }.support-card.patreon { --support-accent: #f96854; }.support-card.coffee { --support-accent: #e3ae00; }.support-card.paypal { --support-accent: #1473e6; }
+.support-card > span { align-self: flex-start; padding: 5px 8px; border-radius: 99px; background: color-mix(in srgb, var(--support-accent) 13%, transparent); color: var(--support-accent); font: 9px 'DM Mono', monospace; letter-spacing: .08em; }
+.support-card h3 { margin: 28px 0 0; font: 500 26px/1 Fraunces, serif; letter-spacing: -.045em; }
+.support-card p { margin: 10px 0 0; color: var(--body-copy); font-size: 13px; line-height: 1.5; }
+.support-card b { display: flex; justify-content: space-between; gap: 10px; margin-top: auto; color: var(--support-accent); font-size: 12px; }
+.support-card b i { font-size: 17px; font-style: normal; transition: transform .2s ease; }
+.support-card:hover, .support-card:focus-visible { border-color: color-mix(in srgb, var(--support-accent) 50%, var(--line)); box-shadow: 0 15px 31px rgba(20, 47, 43, .12); transform: translateY(-4px); }
+.support-card:hover b i { transform: translateX(3px); }
+.support-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; padding: 0 13px 13px; border-radius: 0 0 14px 14px; background: var(--panel); }
+.support-links a { display: flex; flex-direction: column; gap: 7px; min-height: 84px; padding: 18px; border: 1px solid var(--line); border-radius: 9px; background: color-mix(in srgb, var(--cream) 72%, transparent); color: var(--ink); text-decoration: none; }
+.support-links strong { font: 500 20px Fraunces, serif; letter-spacing: -.04em; }.support-links span { color: var(--muted); font-size: 12px; }.support-links a:hover { border-color: var(--orange); }
+
 [data-theme='dark'] .button.primary { box-shadow: 0 0 0 1px color-mix(in srgb, var(--lime) 35%, transparent), 0 9px 26px rgba(0, 0, 0, 0.26); }
 [data-theme='dark'] .button.primary span { color: var(--lime); }
 [data-theme='dark'] .project-image > img:first-child { filter: brightness(0.82) saturate(0.86); }
@@ -932,6 +954,13 @@
   .notes-grid { grid-template-columns: 1fr; }
   .notes-grid article, .notes-grid article:nth-child(even) { min-height: 0; border-right: 0; }
   .notes-grid h2 { margin-top: 21px; font-size: 28px; }
+
+  .support { padding-top: 0; }
+  .support-header { grid-template-columns: 1fr; gap: 26px; padding: 32px 24px; }
+  .support-header h2 { font-size: 45px; }
+  .support-grid, .support-links { grid-template-columns: 1fr; gap: 10px; padding: 10px; }
+  .support-card { min-height: 0; padding: 20px; }.support-card h3 { margin-top: 21px; }.support-card p { margin-bottom: 21px; }
+  .support-links { padding-top: 0; }.support-links a { min-height: 0; }
 
   .app-orbit-icons img { width: 51px; height: 51px; }
   .orbit-app { width: 56px; }
