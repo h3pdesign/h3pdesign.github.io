@@ -520,6 +520,34 @@
   white-space: nowrap;
 }
 
+/* The public code index is a maintained register, not a flat directory. */
+.repositories { padding-top: 72px; }
+.repository-register { display: grid; gap: 34px; margin-top: 26px; }
+.repo-cluster { border-top: 1px solid var(--line); }
+.repo-cluster-head { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; padding: 14px 0; }
+.repo-cluster-head p, .repo-cluster-head span { margin: 0; font: 10px 'DM Mono', monospace; letter-spacing: .09em; }
+.repo-cluster-head p { color: var(--orange); }.repo-cluster-head span { color: var(--muted); }
+.repo-cluster .repository-list { margin: 0; border-top: 0; }
+.repository-list .repo-row { --repo-wash: var(--panel); position: relative; grid-template-columns: 38px minmax(104px, .74fr) minmax(240px, 1.38fr) minmax(90px, .48fr) auto; gap: 15px; align-items: center; min-height: 76px; padding: 13px 10px; border-bottom-color: var(--line); border-radius: 8px; }
+.repository-list .repo-row::after { display: none; }
+.repository-list .repo-row:hover, .repository-list .repo-row:focus-visible { padding-right: 10px; padding-left: 10px; background: linear-gradient(90deg, color-mix(in srgb, var(--repo-wash) 65%, transparent), transparent 80%); color: var(--ink); }
+.repository-list .repo-row:hover b, .repository-list .repo-row:focus-visible b { opacity: 1; }
+.repository-list .repo-row.is-featured { min-height: 96px; background: color-mix(in srgb, var(--repo-wash) 21%, var(--cream)); }
+.repository-list .repo-row.is-featured strong { font-size: 25px; }
+.repo-neon { --repo-wash: #c4e4da; }.repo-gitbird { --repo-wash: #f1c5b5; }.repo-lingua { --repo-wash: #e9dfc3; }.repo-metrics { --repo-wash: #b9d4e4; }
+.repo-mark { display: grid; place-items: center; width: 32px; height: 32px; overflow: hidden; border: 1px solid var(--line); border-radius: 9px; background: var(--cream); color: var(--emphasis); font: 10px 'DM Mono', monospace; letter-spacing: -.06em; }
+.repo-mark img { width: 100%; height: 100%; object-fit: cover; }.mark-code { background: color-mix(in srgb, var(--panel) 70%, var(--cream)); }.mark-grid { background-image: linear-gradient(var(--emphasis) 1px, transparent 1px), linear-gradient(90deg, var(--emphasis) 1px, transparent 1px); background-size: 7px 7px; opacity: .82; }.mark-package { border-radius: 5px; background: linear-gradient(135deg, transparent 49%, var(--emphasis) 50% 52%, transparent 53%), color-mix(in srgb, var(--orange) 20%, var(--cream)); }
+.repository-list .repo-kind { color: var(--orange); font-size: 9px; }.repo-copy { display: grid; gap: 4px; }.repository-list .repo-copy strong { font-size: 20px; }.repository-list .repo-copy small { color: var(--body-copy); font-size: 13px; }.repo-status { justify-self: start; padding: 5px 7px; border: 1px solid currentColor; border-radius: 99px; font: 9px 'DM Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }.repo-status.active { color: #2c876c; }.repo-status.released { color: #38779e; }.repo-status.maintained { color: var(--emphasis); }.repo-status.progress { color: #a66828; }.repository-list .repo-row b { color: var(--emphasis); font-size: 17px; }
+
+/* External links are grouped as a reading index with material swatches, not repository rows. */
+.editorial-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin-top: 27px; }
+.link-cluster { display: grid; align-content: start; gap: 8px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: color-mix(in srgb, var(--panel) 43%, transparent); }
+.link-cluster-head { display: flex; justify-content: space-between; gap: 12px; padding: 4px 3px 11px; }.link-cluster-head p, .link-cluster-head span { margin: 0; font: 9px 'DM Mono', monospace; letter-spacing: .08em; }.link-cluster-head p { color: var(--orange); }.link-cluster-head span { color: var(--muted); text-align: right; }
+.editorial-link { --link-swatch: var(--panel); position: relative; display: grid; grid-template-columns: 1fr auto; gap: 7px 12px; min-height: 94px; padding: 16px 16px 16px 21px; overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: var(--cream); color: var(--ink); text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.editorial-link::before { position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--link-swatch); content: ''; }.editorial-link:hover, .editorial-link:focus-visible { border-color: var(--link-swatch); box-shadow: 0 10px 22px color-mix(in srgb, var(--link-swatch) 22%, transparent); transform: translateY(-2px); }.editorial-link.featured-link { min-height: 120px; background: linear-gradient(120deg, color-mix(in srgb, var(--link-swatch) 23%, var(--cream)), var(--cream) 72%); }.editorial-link.featured-link strong { font-size: 28px; }
+.link-type { color: var(--orange); font: 9px 'DM Mono', monospace; letter-spacing: .07em; }.editorial-link strong { font: 500 22px/1 Fraunces, serif; letter-spacing: -.04em; }.editorial-link small { grid-column: 1 / -1; color: var(--body-copy); font-size: 12px; line-height: 1.45; }.editorial-link b { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--emphasis); font-size: 19px; }
+.swatch-home { --link-swatch: #7d918c; }.swatch-docs { --link-swatch: #80a9b8; }.swatch-neon { --link-swatch: #6cae9b; }.swatch-voyages { --link-swatch: #bd9763; }.swatch-medium { --link-swatch: #5f8c87; }.swatch-substack { --link-swatch: #bc805e; }.swatch-metrics { --link-swatch: #5b94b3; }.swatch-gitbird { --link-swatch: #df7657; }.swatch-data { --link-swatch: #78978f; }.swatch-monitor { --link-swatch: #8d7aab; }
+
 .intent-switch {
   display: flex;
   flex-wrap: wrap;
@@ -1075,16 +1103,11 @@ footer { position: relative; }
 
   .project-reason { display: none; }
 
-  .repository-list a {
-    grid-template-columns: 1fr auto;
-    gap: 7px 14px;
-  }
-
-  .repository-list a::after { right: 0; top: 19px; transform: none; }
-  .repository-list a:hover::after, .repository-list a:focus-visible::after { transform: none; }
-
-  .repository-list .repo-kind { grid-column: 1; }
-  .repository-list b { grid-column: 2; grid-row: 1; }
-  .repository-list strong,
-  .repository-list small { grid-column: 1 / -1; }
+  .repositories { padding-top: 56px; }
+  .repository-register { gap: 26px; }.repo-cluster-head { padding: 12px 0; }
+  .repository-list .repo-row { grid-template-columns: 34px 1fr auto; gap: 9px 12px; min-height: 0; padding: 14px 8px; }
+  .repository-list .repo-row.is-featured { min-height: 0; }.repository-list .repo-row.is-featured strong { font-size: 22px; }
+  .repository-list .repo-kind { grid-column: 2; }.repository-list .repo-copy { grid-column: 2 / -1; }.repository-list .repo-status { grid-column: 2; }.repository-list .repo-row b { grid-column: 3; grid-row: 1; }
+  .repository-list .repo-copy strong { font-size: 19px; }.repository-list .repo-copy small { font-size: 12px; }
+  .editorial-index { grid-template-columns: 1fr; gap: 10px; }.link-cluster { padding: 13px; }.editorial-link.featured-link { min-height: 106px; }
 }
