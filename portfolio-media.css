@@ -980,12 +980,14 @@ footer { position: relative; }
 
 .hero-apps-composite {
   grid-column: 1 / -1;
-  grid-row: 2;
   width: min(100%, 1120px);
   margin: clamp(20px, 4vw, 52px) auto 0;
 }
 
-.hero-aside { grid-column: 2; grid-row: 1; }
+.hero {
+  column-gap: 10vw;
+  row-gap: clamp(36px, 5vw, 72px);
+}
 
 .hero-apps-composite img {
   display: block;
