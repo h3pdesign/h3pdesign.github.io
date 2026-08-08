@@ -56,8 +56,8 @@
 .section-intro.work-intro {
   max-width: 1120px;
   margin: 42px auto 0;
-  color: var(--ink);
-  font: 600 clamp(48px, 7vw, 96px)/0.98 'Fraunces', serif;
+  color: #cf59cc;
+  font: 600 clamp(40px, 5.8vw, 78px)/0.98 'Fraunces', serif;
   letter-spacing: -0.055em;
   text-align: center;
 }
@@ -1110,6 +1110,7 @@ footer { position: relative; }
 .hero h1 em, .about h2 em { color: var(--emphasis); }
 .lede { color: var(--lede-copy); }
 .hero-detail { max-width: 530px; margin: 12px 0 0; color: var(--body-copy); font-size: 14px; line-height: 1.55; }
+[data-theme='dark'] .section-intro.work-intro { color: #f09be8; }
 .button.secondary { border-color: var(--button-line); }
 .signal, .app-orbit { border-color: var(--signal-line); }
 .hero-note { color: var(--body-copy); }
@@ -1188,7 +1189,7 @@ footer { position: relative; }
 
 @media (max-width: 760px) {
   .section-intro { font-size: 15px; }
-  .section-intro.work-intro { margin-top: 30px; font-size: clamp(40px, 12vw, 62px); }
+  .section-intro.work-intro { margin-top: 30px; font-size: clamp(36px, 10vw, 54px); }
 
   .intent-switch { align-items: flex-start; }
   .intent-switch > span { flex-basis: 100%; }
