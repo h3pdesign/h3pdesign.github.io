@@ -981,12 +981,12 @@ footer { position: relative; }
 .hero-apps-composite {
   grid-column: 1 / -1;
   width: min(100%, 1120px);
-  margin: clamp(20px, 4vw, 52px) auto 0;
+  margin: 0 auto;
 }
 
 .hero {
   column-gap: 10vw;
-  row-gap: clamp(36px, 5vw, 72px);
+  row-gap: clamp(8px, 1vw, 20px);
 }
 
 .hero-apps-composite img {
