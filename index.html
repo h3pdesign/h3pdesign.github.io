@@ -30,7 +30,7 @@
     <a class="brand" href="#top" aria-label="h3p home"><span class="brand-mark">h</span><span>h3p</span></a>
     <nav aria-label="Primary navigation">
       <a href="#work">Work</a><a href="#repositories">Repositories</a><a href="#about">About</a><a href="#writing">Writing</a><a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <div class="appearance-controls" aria-label="Appearance controls"><button id="mode-toggle" type="button" aria-label="Switch appearance mode">System</button><button id="palette-toggle" type="button" aria-label="Switch color palette">Verdant</button></div>
+      <div class="appearance-controls" aria-label="Appearance controls"><div class="appearance-group" role="group" aria-label="Light and dark appearance"><button type="button" data-mode-control="system" aria-pressed="false">Auto</button><button type="button" data-mode-control="light" aria-pressed="false">Light</button><button type="button" data-mode-control="dark" aria-pressed="false">Dark</button></div><div class="appearance-group palette-group" role="group" aria-label="Color theme"><button type="button" data-palette-control="verdant" aria-pressed="false"><i></i>Verdant</button><button type="button" data-palette-control="tangerine" aria-pressed="false"><i></i>Tangerine</button><button type="button" data-palette-control="dusk" aria-pressed="false"><i></i>Dusk</button></div></div>
     </nav>
   </header>
 
@@ -63,8 +63,6 @@
       </div>
     </section>
 
-    <section class="principles" aria-label="Product principles"><p>Native by default</p><p>Private by design</p><p>Fast in practice</p><p>Made to last</p></section>
-
     <section class="repositories section" id="repositories">
       <div class="section-head"><p class="kicker">REPOSITORY REGISTER</p><span>PUBLIC · ACTIVE · MAINTAINED</span></div>
       <p class="section-intro">A focused index of public repositories I own or actively maintain. Forks, private projects, and inactive mirrors are intentionally left out.</p>
@@ -92,8 +90,8 @@
   <footer><span>h3p · Copenhagen</span><span>Swift · Python · thoughtful systems</span><a href="https://x.com/h3palpha" target="_blank" rel="noreferrer">@h3palpha on X ↗</a></footer>
   <script>
     const root = document.documentElement;
-    const modeToggle = document.querySelector('#mode-toggle');
-    const paletteToggle = document.querySelector('#palette-toggle');
+    const modeControls = [...document.querySelectorAll('[data-mode-control]')];
+    const paletteControls = [...document.querySelectorAll('[data-palette-control]')];
     const modeKey = 'h3p-color-mode';
     const paletteKey = 'h3p-palette';
     const modes = ['system', 'light', 'dark'];
@@ -110,14 +108,22 @@
       root.dataset.mode = mode;
       root.dataset.palette = palette;
       root.style.colorScheme = appearance;
-      modeToggle.textContent = mode[0].toUpperCase() + mode.slice(1);
-      paletteToggle.textContent = palette[0].toUpperCase() + palette.slice(1);
+      modeControls.forEach((control) => {
+        const selected = control.dataset.modeControl === mode;
+        control.classList.toggle('is-selected', selected);
+        control.setAttribute('aria-pressed', selected);
+      });
+      paletteControls.forEach((control) => {
+        const selected = control.dataset.paletteControl === palette;
+        control.classList.toggle('is-selected', selected);
+        control.setAttribute('aria-pressed', selected);
+      });
       document.querySelector('meta[name="theme-color"]').content = getComputedStyle(root).getPropertyValue('--paper').trim();
     };
 
     applyAppearance();
-    modeToggle.onclick = () => { mode = modes[(modes.indexOf(mode) + 1) % modes.length]; localStorage.setItem(modeKey, mode); applyAppearance(); };
-    paletteToggle.onclick = () => { palette = palettes[(palettes.indexOf(palette) + 1) % palettes.length]; localStorage.setItem(paletteKey, palette); applyAppearance(); };
+    modeControls.forEach((control) => { control.onclick = () => { mode = control.dataset.modeControl; localStorage.setItem(modeKey, mode); applyAppearance(); }; });
+    paletteControls.forEach((control) => { control.onclick = () => { palette = control.dataset.paletteControl; localStorage.setItem(paletteKey, palette); applyAppearance(); }; });
     systemAppearance.addEventListener('change', () => { if (mode === 'system') applyAppearance(); });
 
     const projects = [...document.querySelectorAll('.project[data-project]')];
