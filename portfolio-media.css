@@ -1116,7 +1116,9 @@ footer { position: relative; }
 
 .site-header { background: color-mix(in srgb, var(--paper) 88%, transparent); }
 .site-header::after { background: linear-gradient(90deg, var(--orange), transparent 36%, transparent 68%, var(--header-glow)); }
-.hero h1 em, .about h2 em { color: var(--emphasis); }
+.hero h1 em { color: var(--lime); }
+.about h2 em { color: var(--emphasis); }
+[data-theme='dark'] .hero h1 em { color: var(--lime); }
 .lede { color: var(--lede-copy); }
 .hero-detail { max-width: 530px; margin: 12px 0 0; color: var(--body-copy); font-size: 14px; line-height: 1.55; }
 [data-theme='dark'] .section-intro.work-intro { color: var(--orange); }
