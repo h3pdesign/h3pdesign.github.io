@@ -352,9 +352,9 @@
 .daily-feature-bottom { margin-top: 25px; }
 .daily-feature-bottom:empty { display: none; }
 .daily-feature-card,
-.daily-feature:has(.daily-feature-card + .daily-feature-card) .daily-feature-card { display: grid; grid-template-columns: minmax(245px, 0.78fr) minmax(0, 1.22fr); grid-template-areas: 'meta screenshot' 'icon screenshot' 'title screenshot' 'copy screenshot' 'reason screenshot' 'link screenshot'; grid-template-rows: auto auto auto 1fr auto auto; gap: 0 clamp(25px, 4vw, 62px); min-height: 440px; padding: 42px clamp(25px, 5vw, 70px); border-radius: 12px; background: linear-gradient(90deg, color-mix(in srgb, var(--daily-tint) 77%, var(--cream)) 0 47%, var(--cream) 63%); }
+.daily-feature:has(.daily-feature-card + .daily-feature-card) .daily-feature-card { display: grid; grid-template-columns: minmax(245px, 0.78fr) minmax(0, 1.22fr); grid-template-areas: 'meta screenshot' 'icon screenshot' 'title screenshot' 'copy screenshot' 'reason screenshot' 'link screenshot'; grid-template-rows: auto auto auto 1fr auto auto; gap: 0 clamp(25px, 4vw, 62px); min-height: 440px; padding: 42px clamp(25px, 5vw, 70px); overflow: hidden; border-radius: 12px; background: linear-gradient(90deg, color-mix(in srgb, var(--daily-tint) 77%, var(--cream)) 0 47%, var(--cream) 63%); }
 .daily-feature-card .project-image,
-.daily-feature:has(.daily-feature-card + .daily-feature-card) .project-image { grid-area: screenshot; height: 100%; min-height: 356px; margin: -42px -70px -42px 0; border-radius: 0; }
+.daily-feature:has(.daily-feature-card + .daily-feature-card) .project-image { grid-area: screenshot; align-self: stretch; height: auto; min-height: 0; margin: -42px calc(-1 * clamp(25px, 5vw, 70px)) -42px 0; border-radius: 0; }
 .daily-feature-screenshot::before { display: block; }
 .daily-feature-card .project-meta,
 .daily-feature:has(.daily-feature-card + .daily-feature-card) .project-meta { grid-area: meta; margin: 0; }
