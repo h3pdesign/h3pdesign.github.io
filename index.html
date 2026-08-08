@@ -6,6 +6,17 @@
   <meta name="description" content="h3p — native Apple software, focused tools, and thoughtful digital systems.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#f3f1ea">
+  <link rel="canonical" href="https://h3pdesign.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://h3pdesign.github.io/">
+  <meta property="og:title" content="h3p — Native software, thoughtfully made">
+  <meta property="og:description" content="Native Apple software, focused tools, and thoughtful digital systems.">
+  <meta property="og:image" content="https://h3pdesign.github.io/social-preview.png">
+  <meta property="og:image:alt" content="Neon Vision Editor, a native Apple app by h3p">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="h3p — Native software, thoughtfully made">
+  <meta name="twitter:description" content="Native Apple software, focused tools, and thoughtful digital systems.">
+  <meta name="twitter:image" content="https://h3pdesign.github.io/social-preview.png">
   <title>h3p — Native software, thoughtfully made</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +30,7 @@
     <a class="brand" href="#top" aria-label="h3p home"><span class="brand-mark">h</span><span>h3p</span></a>
     <nav aria-label="Primary navigation">
       <a href="#work">Work</a><a href="#repositories">Repositories</a><a href="#about">About</a><a href="#writing">Writing</a><a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <button id="theme-toggle" type="button">Dark mode</button>
+      <div class="appearance-controls" aria-label="Appearance controls"><button id="mode-toggle" type="button" aria-label="Switch appearance mode">System</button><button id="palette-toggle" type="button" aria-label="Switch color palette">Verdant</button></div>
     </nav>
   </header>
 
@@ -29,7 +40,7 @@
         <p class="kicker">INDEPENDENT DEVELOPER · COPENHAGEN</p>
         <h1>Software with<br><em>a point of view.</em></h1>
         <p class="lede">I build native Apple tools, calm interfaces, and reliable systems for people who care how software feels.</p>
-        <div class="hero-actions"><a class="button primary" href="#work">Explore the work <span>↓</span></a><a class="button secondary" href="https://x.com/h3palpha" target="_blank" rel="noreferrer">@h3palpha on X ↗</a></div>
+        <div class="hero-actions"><a class="button primary" href="#work">Explore the work <span>↓</span></a><a class="button secondary" href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">Contact on GitHub ↗</a></div>
       </div>
       <div class="hero-aside">
         <div class="signal"><span></span><div><b>Currently building</b><strong>Neon Vision Editor</strong><small>Native · fast · readable</small></div><img class="signal-icon" src="neon-icon.png" alt="Neon Vision Editor icon"></div>
@@ -41,15 +52,17 @@
     <section class="work section" id="work">
       <div class="section-head"><p class="kicker">SELECTED WORK</p><span id="work-count">04 SELECTED · 01 DAILY FEATURE</span></div>
       <p class="section-intro">Independent Apple apps, field notes, and developer infrastructure—each made to be useful, legible, and built to last.</p>
-      <div class="daily-feature" aria-live="polite"><div class="daily-feature-label"><span>DAILY FEATURE</span><small>Rotates every day</small></div></div>
+      <div class="daily-feature" aria-live="polite"><div class="daily-feature-label"><span>DAILY FEATURE</span><small id="feature-date">Rotates every day</small></div></div>
       <div class="project-grid">
-        <a class="project featured" data-project="neon" href="https://h3pdesign.github.io/Neon-Vision-Editor/" target="_blank" rel="noreferrer"><div class="project-image neon"><img src="neon-vision-editor-light.png" alt="Neon Vision Editor showing a Swift source file" loading="lazy" decoding="async"><img class="project-icon" src="neon-icon.png" alt="" aria-hidden="true"></div><div class="project-meta"><span>01 · PRODUCT</span><span>AVAILABLE · macOS · iPadOS · iOS</span></div><h2>Neon Vision Editor</h2><p>A lightweight, native code and Markdown editor built for speed, readability, and a quiet workspace.</p><span class="project-link">Explore Neon Vision Editor ↗</span></a>
-        <a class="project" data-project="apps" href="https://apps-h3p.com/" target="_blank" rel="noreferrer"><div class="project-image apps-portal"><img src="apps-h3p-portal.jpg" alt="h3p apps documentation portal homepage" loading="lazy" decoding="async"></div><div class="project-meta"><span>02 · APPS</span><span>LIVE PORTAL · DOCS · RELEASES</span></div><h2>apps-h3p.com</h2><p>A focused home for app documentation, setup guides, release notes, and support materials.</p><span class="project-link">Browse the apps portal ↗</span></a>
-        <a class="project" data-project="voyages" href="https://h3pdesign.github.io/voyages/" target="_blank" rel="noreferrer"><div class="project-image voyages"><img src="voyages-journal.jpg" alt="Voyages by h3p journal showing a Denmark field entry" loading="lazy" decoding="async"></div><div class="project-meta"><span>03 · JOURNAL</span><span>LIVE JOURNAL · MARKDOWN · MAPS</span></div><h2>Voyages</h2><p>A living travel journal where writing, photographs, and place meet in one readable interface.</p><span class="project-link">Read Voyages ↗</span></a>
-        <a class="project" data-project="gitbird" href="https://github.com/h3pdesign/GitBird" target="_blank" rel="noreferrer"><div class="project-image gitbird"><img src="gitbird-screenshot.png" alt="GitBird menu bar notification popover with repository updates" loading="lazy" decoding="async"><img class="project-icon" src="gitbird-icon.png" alt="" aria-hidden="true"></div><div class="project-meta"><span>04 · OPEN SOURCE</span><span>AVAILABLE · SWIFT · macOS</span></div><h2>GitBird</h2><p>A focused menu bar companion for GitHub and GitLab notifications, designed to stay out of the way.</p><span class="project-link">View GitBird on GitHub ↗</span></a>
-        <a class="project" data-project="lingua" href="https://github.com/h3pdesign/Lingua-Latina-Public" target="_blank" rel="noreferrer"><div class="project-image lingua"><div class="lingua-phone"><img src="lingua-latina-screenshot.png" alt="Lingua Latina iPhone app for learning Latin vocabulary and grammar" loading="lazy" decoding="async"></div><img class="project-icon" src="lingua-latina-icon.png" alt="" aria-hidden="true"></div><div class="project-meta"><span>05 · PRODUCT</span><span>AVAILABLE · SWIFT · iOS</span></div><h2>Lingua Latina</h2><p>A quiet Latin companion for translation, grammar, and offline study.</p><span class="project-link">Explore Lingua Latina ↗</span></a>
+        <a class="project featured" data-project="neon" href="https://h3pdesign.github.io/Neon-Vision-Editor/" target="_blank" rel="noreferrer"><div class="project-image neon"><img src="neon-vision-editor-light.png" alt="Neon Vision Editor showing a Swift source file" loading="lazy" decoding="async"><img class="project-icon" src="neon-icon.png" alt="" aria-hidden="true"></div><div class="project-meta"><span>01 · PRODUCT</span><span>AVAILABLE · macOS · iPadOS · iOS</span></div><h2>Neon Vision Editor</h2><p>A lightweight, native code and Markdown editor built for speed, readability, and a quiet workspace.</p><ul class="project-proof"><li>Native across four Apple platforms</li><li>Built for local files and long sessions</li></ul><span class="project-reason">For people who prefer their editor to disappear behind the work.</span><span class="project-link">Explore Neon Vision Editor ↗</span></a>
+        <a class="project" data-project="apps" href="https://apps-h3p.com/" target="_blank" rel="noreferrer"><div class="project-image apps-portal"><img src="apps-h3p-portal.jpg" alt="h3p apps documentation portal homepage" loading="lazy" decoding="async"></div><div class="project-meta"><span>02 · APPS</span><span>LIVE PORTAL · DOCS · RELEASES</span></div><h2>apps-h3p.com</h2><p>A focused home for app documentation, setup guides, release notes, and support materials.</p><ul class="project-proof"><li>Practical docs and release notes</li><li>One home for the app ecosystem</li></ul><span class="project-reason">Software feels more trustworthy when the support material is as considered as the product.</span><span class="project-link">Browse the apps portal ↗</span></a>
+        <a class="project" data-project="voyages" href="https://h3pdesign.github.io/voyages/" target="_blank" rel="noreferrer"><div class="project-image voyages"><img src="voyages-journal.jpg" alt="Voyages by h3p journal showing a Denmark field entry" loading="lazy" decoding="async"></div><div class="project-meta"><span>03 · JOURNAL</span><span>LIVE JOURNAL · MARKDOWN · MAPS</span></div><h2>Voyages</h2><p>A living travel journal where writing, photographs, and place meet in one readable interface.</p><ul class="project-proof"><li>Writing, maps, and original photographs</li><li>A continuously growing public journal</li></ul><span class="project-reason">A quieter alternative to a feed: places, observed carefully and kept in context.</span><span class="project-link">Read Voyages ↗</span></a>
+        <a class="project" data-project="gitbird" href="https://github.com/h3pdesign/GitBird" target="_blank" rel="noreferrer"><div class="project-image gitbird"><img src="gitbird-screenshot.png" alt="GitBird menu bar notification popover with repository updates" loading="lazy" decoding="async"><img class="project-icon" src="gitbird-icon.png" alt="" aria-hidden="true"></div><div class="project-meta"><span>04 · OPEN SOURCE</span><span>AVAILABLE · SWIFT · macOS</span></div><h2>GitBird</h2><p>A focused menu bar companion for GitHub and GitLab notifications, designed to stay out of the way.</p><ul class="project-proof"><li>Native macOS menu bar utility</li><li>Open source and privacy-minded</li></ul><span class="project-reason">For developers who want to know what changed without living in a dashboard.</span><span class="project-link">View GitBird on GitHub ↗</span></a>
+        <a class="project" data-project="lingua" href="https://github.com/h3pdesign/Lingua-Latina-Public" target="_blank" rel="noreferrer"><div class="project-image lingua"><img src="lingua-latina-screenshot.png" alt="Lingua Latina iPhone app for learning Latin vocabulary and grammar" loading="lazy" decoding="async"><img class="project-icon" src="lingua-latina-icon.png" alt="" aria-hidden="true"></div><div class="project-meta"><span>05 · PRODUCT</span><span>AVAILABLE · SWIFT · iOS</span></div><h2>Lingua Latina</h2><p>A quiet Latin companion for translation, grammar, and offline study.</p><ul class="project-proof"><li>Native iPhone learning companion</li><li>Useful offline, not just online</li></ul><span class="project-reason">For learners who want study tools that feel closer to a book than a feed.</span><span class="project-link">Explore Lingua Latina ↗</span></a>
       </div>
     </section>
+
+    <section class="principles" aria-label="Product principles"><p>Native by default</p><p>Private by design</p><p>Fast in practice</p><p>Made to last</p></section>
 
     <section class="repositories section" id="repositories">
       <div class="section-head"><p class="kicker">REPOSITORY REGISTER</p><span>PUBLIC · ACTIVE · MAINTAINED</span></div>
@@ -73,12 +86,34 @@
   </main>
   <footer><span>h3p · Copenhagen</span><span>Swift · Python · thoughtful systems</span><a href="https://x.com/h3palpha" target="_blank" rel="noreferrer">@h3palpha on X ↗</a></footer>
   <script>
-    const key = 'h3p-theme', root = document.documentElement, toggle = document.querySelector('#theme-toggle');
-    const saved = localStorage.getItem(key);
-    root.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    const sync = () => toggle.textContent = root.dataset.theme === 'dark' ? 'Light mode' : 'Dark mode';
-    sync();
-    toggle.onclick = () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem(key, root.dataset.theme); sync(); };
+    const root = document.documentElement;
+    const modeToggle = document.querySelector('#mode-toggle');
+    const paletteToggle = document.querySelector('#palette-toggle');
+    const modeKey = 'h3p-color-mode';
+    const paletteKey = 'h3p-palette';
+    const modes = ['system', 'light', 'dark'];
+    const palettes = ['verdant', 'tangerine', 'dusk'];
+    const systemAppearance = matchMedia('(prefers-color-scheme: dark)');
+    let mode = localStorage.getItem(modeKey) || localStorage.getItem('h3p-theme') || 'system';
+    let palette = localStorage.getItem(paletteKey) || 'verdant';
+    if (!modes.includes(mode)) mode = 'system';
+    if (!palettes.includes(palette)) palette = 'verdant';
+
+    const applyAppearance = () => {
+      const appearance = mode === 'system' ? (systemAppearance.matches ? 'dark' : 'light') : mode;
+      root.dataset.theme = appearance;
+      root.dataset.mode = mode;
+      root.dataset.palette = palette;
+      root.style.colorScheme = appearance;
+      modeToggle.textContent = mode[0].toUpperCase() + mode.slice(1);
+      paletteToggle.textContent = palette[0].toUpperCase() + palette.slice(1);
+      document.querySelector('meta[name="theme-color"]').content = getComputedStyle(root).getPropertyValue('--paper').trim();
+    };
+
+    applyAppearance();
+    modeToggle.onclick = () => { mode = modes[(modes.indexOf(mode) + 1) % modes.length]; localStorage.setItem(modeKey, mode); applyAppearance(); };
+    paletteToggle.onclick = () => { palette = palettes[(palettes.indexOf(palette) + 1) % palettes.length]; localStorage.setItem(paletteKey, palette); applyAppearance(); };
+    systemAppearance.addEventListener('change', () => { if (mode === 'system') applyAppearance(); });
 
     const projects = [...document.querySelectorAll('.project[data-project]')];
     const dailyFeature = document.querySelector('.daily-feature');
@@ -87,6 +122,8 @@
     const featureCount = projects.length % 2 === 0 ? 2 : 1;
     const featureStart = dayNumber % projects.length;
     const workCount = document.querySelector('#work-count');
+    const featureDate = document.querySelector('#feature-date');
+    featureDate.textContent = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).format(today);
     workCount.textContent = `${projects.length - featureCount} SELECTED · ${String(featureCount).padStart(2, '0')} DAILY FEATURE${featureCount > 1 ? 'S' : ''}`;
     for (let offset = 0; offset < featureCount; offset += 1) {
       const featuredProject = projects[(featureStart + offset) % projects.length];
