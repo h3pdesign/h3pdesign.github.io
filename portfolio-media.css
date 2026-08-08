@@ -296,12 +296,13 @@
 .project.app-card h2 { margin-top: 0; }
 .project.app-card .project-proof { margin-top: 15px; }
 
-/* Websites share the card rhythm, but lead with their own editorial material rather than an app icon. */
+/* Websites share the card rhythm, with their own favicon as a compact destination mark. */
 .project.site-card { --site-wash: var(--panel); display: block; overflow: hidden; padding: 0 26px 31px; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(112deg, color-mix(in srgb, var(--site-wash) 64%, var(--cream)), var(--cream) 76%); box-shadow: 0 14px 35px rgba(20, 47, 43, 0.06); }
 .project.site-card-apps { --site-wash: #d5e5eb; }
 .project.site-card-voyages { --site-wash: #ebdfbd; }
 .project.site-card .project-image { height: 290px; margin: 0 -26px 25px; border-radius: 0; }
 .project.site-card .project-meta { margin: 0; }
+.project.site-card > .site-icon { display: block; width: 78px; height: 78px; padding: 7px; margin: 18px 0; border: 1px solid rgba(255, 255, 255, 0.72); border-radius: 21px; background: color-mix(in srgb, var(--site-wash) 65%, white); box-shadow: 0 14px 25px rgba(20, 47, 43, 0.14); object-fit: contain; }
 .project.site-card h2 { margin-top: 10px; }
 .project.site-card .project-proof { margin-top: 15px; }
 .site-card-apps .project-image::after { position: absolute; z-index: 1; inset: 0; background: linear-gradient(135deg, rgba(221, 239, 243, 0.1), rgba(31, 76, 93, 0.18)), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.17) 0 1px, transparent 1px 32px), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.14) 0 1px, transparent 1px 32px); content: ''; pointer-events: none; }
@@ -977,6 +978,21 @@ footer { position: relative; }
 .button.primary { background: var(--action-bg); color: var(--action-fg); }
 .daily-feature-label span { background: var(--label-bg); border-color: var(--label-bg); color: var(--label-fg); }
 
+.hero-apps-composite {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: min(100%, 1120px);
+  margin: clamp(20px, 4vw, 52px) auto 0;
+}
+
+.hero-aside { grid-column: 2; grid-row: 1; }
+
+.hero-apps-composite img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .appearance-controls { display: flex; gap: 8px; align-items: center; }
 .appearance-group { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 99px; background: color-mix(in srgb, var(--cream) 72%, transparent); }
 .appearance-group button {
@@ -1003,6 +1019,11 @@ footer { position: relative; }
 .palette-random:hover, .palette-random:focus-visible { background: var(--orange); color: var(--cream); }
 
 @media (max-width: 760px) {
+  .hero-apps-composite {
+    width: min(100%, 640px);
+    margin: 46px auto 0;
+  }
+
   .appearance-controls { gap: 5px; }
   .appearance-group { padding: 2px; }
   .appearance-group button { padding: 6px 7px; font-size: 9px; }
@@ -1088,6 +1109,7 @@ footer { position: relative; }
   .project.app-card > .project-icon { width: 70px; height: 70px; margin: 16px 0; border-radius: 19px; }
   .project.site-card { padding: 0 23px 28px; }
   .project.site-card .project-image { height: 255px; margin: 0 -23px 23px; }
+  .project.site-card > .site-icon { width: 70px; height: 70px; margin: 16px 0; border-radius: 19px; }
 
   .daily-feature-card,
   .daily-feature:has(.daily-feature-card + .daily-feature-card) .daily-feature-card { display: grid; grid-template-columns: minmax(125px, 0.72fr) minmax(0, 1.28fr); min-height: 300px; padding: 24px 18px; }
