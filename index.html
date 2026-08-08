@@ -30,7 +30,7 @@
     <a class="brand" href="#top" aria-label="h3p home"><span class="brand-mark">h</span><span>h3p</span></a>
     <nav aria-label="Primary navigation">
       <a href="#work">Work</a><a href="#repositories">Repositories</a><a href="#about">About</a><a href="#writing">Writing</a><a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <div class="appearance-controls" aria-label="Appearance controls"><div class="appearance-group" role="group" aria-label="Light and dark appearance"><button type="button" data-mode-control="system" aria-pressed="false">Auto</button><button type="button" data-mode-control="light" aria-pressed="false">Light</button><button type="button" data-mode-control="dark" aria-pressed="false">Dark</button></div><div class="appearance-group palette-group" role="group" aria-label="Color theme"><button type="button" data-palette-control="verdant" aria-pressed="false"><i></i>Verdant</button><button type="button" data-palette-control="tangerine" aria-pressed="false"><i></i>Tangerine</button><button type="button" data-palette-control="dusk" aria-pressed="false"><i></i>Dusk</button></div></div>
+      <div class="appearance-controls" aria-label="Appearance controls"><div class="appearance-group" role="group" aria-label="Light and dark appearance"><button type="button" data-mode-control="system" aria-pressed="false">Auto</button><button type="button" data-mode-control="light" aria-pressed="false">Light</button><button type="button" data-mode-control="dark" aria-pressed="false">Dark</button></div><div class="appearance-group palette-group" id="palette-controls" role="group" aria-label="Color theme"></div><button class="palette-random" id="palette-random" type="button" title="Choose a random color theme">Random</button></div>
     </nav>
   </header>
 
@@ -93,16 +93,42 @@
   <script>
     const root = document.documentElement;
     const modeControls = [...document.querySelectorAll('[data-mode-control]')];
-    const paletteControls = [...document.querySelectorAll('[data-palette-control]')];
+    const paletteGroup = document.querySelector('#palette-controls');
+    const paletteRandom = document.querySelector('#palette-random');
+    let paletteControls = [];
     const modeKey = 'h3p-color-mode';
     const paletteKey = 'h3p-palette';
     const modes = ['system', 'light', 'dark'];
-    const palettes = ['verdant', 'tangerine', 'dusk'];
+    const palettes = ['verdant', 'tangerine', 'dusk', 'coast', 'plum', 'sunbeam', 'stone'];
+    const paletteDetails = {
+      verdant: { label: 'Verdant', swatch: '#39786e' }, tangerine: { label: 'Tangerine', swatch: '#d85d38' }, dusk: { label: 'Dusk', swatch: '#7562ca' }, coast: { label: 'Coast', swatch: '#277a9a' }, plum: { label: 'Plum', swatch: '#8c568e' }, sunbeam: { label: 'Sunbeam', swatch: '#c58b23' }, stone: { label: 'Stone', swatch: '#59636a' }
+    };
     const systemAppearance = matchMedia('(prefers-color-scheme: dark)');
     let mode = localStorage.getItem(modeKey) || localStorage.getItem('h3p-theme') || 'system';
     let palette = localStorage.getItem(paletteKey) || 'verdant';
     if (!modes.includes(mode)) mode = 'system';
     if (!palettes.includes(palette)) palette = 'verdant';
+
+    const randomPalettes = () => {
+      const options = palettes.filter((item) => item !== palette).sort(() => Math.random() - 0.5).slice(0, 2);
+      return [palette, ...options].sort(() => Math.random() - 0.5);
+    };
+
+    const renderPaletteControls = () => {
+      paletteGroup.replaceChildren();
+      randomPalettes().forEach((paletteName) => {
+        const control = document.createElement('button');
+        const swatch = document.createElement('i');
+        control.type = 'button';
+        control.dataset.paletteControl = paletteName;
+        control.setAttribute('aria-pressed', 'false');
+        control.style.setProperty('--swatch', paletteDetails[paletteName].swatch);
+        control.append(swatch, paletteDetails[paletteName].label);
+        control.onclick = () => { palette = paletteName; localStorage.setItem(paletteKey, palette); renderPaletteControls(); applyAppearance(); };
+        paletteGroup.append(control);
+      });
+      paletteControls = [...paletteGroup.querySelectorAll('[data-palette-control]')];
+    };
 
     const applyAppearance = () => {
       const appearance = mode === 'system' ? (systemAppearance.matches ? 'dark' : 'light') : mode;
@@ -123,9 +149,10 @@
       document.querySelector('meta[name="theme-color"]').content = getComputedStyle(root).getPropertyValue('--paper').trim();
     };
 
+    renderPaletteControls();
     applyAppearance();
     modeControls.forEach((control) => { control.onclick = () => { mode = control.dataset.modeControl; localStorage.setItem(modeKey, mode); applyAppearance(); }; });
-    paletteControls.forEach((control) => { control.onclick = () => { palette = control.dataset.paletteControl; localStorage.setItem(paletteKey, palette); applyAppearance(); }; });
+    paletteRandom.onclick = () => { palette = palettes.filter((item) => item !== palette)[Math.floor(Math.random() * (palettes.length - 1))]; localStorage.setItem(paletteKey, palette); renderPaletteControls(); applyAppearance(); };
     systemAppearance.addEventListener('change', () => { if (mode === 'system') applyAppearance(); });
 
     const projects = [...document.querySelectorAll('.project[data-project]')];
