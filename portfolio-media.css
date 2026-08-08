@@ -267,7 +267,7 @@
 .project-image.neon { background: linear-gradient(135deg, #d3eee5, #a7d6ca); }
 .project-image.gitbird { background: linear-gradient(135deg, #ef7846, #c74328); }
 .project-image.lingua { background: linear-gradient(135deg, #e7dfc7, #b7c8bd); }
-.project-image.metrics { background: linear-gradient(135deg, #b9d4e4, #5989a5); }
+.project-image.metrics { background: transparent; }
 
 .project-image.neon::after,
 .project-image.gitbird::after,
