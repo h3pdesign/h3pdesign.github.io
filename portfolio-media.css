@@ -760,6 +760,10 @@ footer { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
   .hero-aside, .project:hover .project-image img, .support-card:hover { transform: none !important; }
+  .hero-panorama:hover .panorama-neon { transform: rotateY(5deg) rotateZ(-1.15deg) translateZ(-28px); }
+  .hero-panorama:hover .panorama-gitbird { transform: rotateY(-5deg) rotateZ(.9deg) translateZ(16px); }
+  .hero-panorama:hover .panorama-metrics { transform: rotateY(-8deg) rotateZ(1.2deg) translateZ(-10px); }
+  .hero-panorama:hover .panorama-lingua { transform: rotateY(-3deg) rotateZ(-1.15deg) translateZ(62px); }
 }
 
 [data-theme='dark'] .button.primary { box-shadow: 0 0 0 1px color-mix(in srgb, var(--lime) 35%, transparent), 0 9px 26px rgba(0, 0, 0, 0.26); }
@@ -1135,24 +1139,76 @@ footer { position: relative; }
 .button.primary { background: var(--action-bg); color: var(--action-fg); }
 .daily-feature-label span { background: var(--label-bg); border-color: var(--label-bg); color: var(--label-fg); }
 
-.hero-apps-composite {
+.hero-panorama {
   grid-column: 1 / -1;
+  position: relative;
   width: min(100%, 1120px);
+  aspect-ratio: 1.904 / 1;
   margin: 0 auto;
+  isolation: isolate;
+  perspective: 1600px;
+  transform-style: preserve-3d;
+}
+
+.panorama-layer {
+  position: absolute;
+  display: block;
+  height: auto;
+  max-width: none;
+  filter: drop-shadow(0 18px 20px rgb(15 34 39 / 0.14));
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(.2, .75, .2, 1);
+}
+
+.panorama-layer img { display: block; width: 100%; height: auto; }
+
+.panorama-neon {
+  z-index: 1;
+  top: 7.7%;
+  left: 2.7%;
+  width: 54.7%;
+  transform: rotateY(5deg) rotateZ(-1.15deg) translateZ(-28px);
+  transform-origin: 78% 54%;
+}
+
+.panorama-gitbird {
+  z-index: 2;
+  top: 3.3%;
+  left: 48.4%;
+  width: 28.1%;
+  transform: rotateY(-5deg) rotateZ(.9deg) translateZ(16px);
+  transform-origin: 12% 70%;
+}
+
+.panorama-metrics {
+  z-index: 2;
+  top: 7.8%;
+  left: 80.1%;
+  width: 16.4%;
+  transform: rotateY(-8deg) rotateZ(1.2deg) translateZ(-10px);
+  transform-origin: 8% 56%;
+}
+
+.panorama-lingua {
+  z-index: 3;
+  top: 38.5%;
+  left: 63.3%;
+  width: 14.8%;
+  transform: rotateY(-3deg) rotateZ(-1.15deg) translateZ(62px);
+  transform-origin: 26% 68%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-panorama:hover .panorama-neon { transform: rotateY(4deg) rotateZ(-1.15deg) translate3d(-5px, 4px, -18px); }
+  .hero-panorama:hover .panorama-gitbird { transform: rotateY(-4deg) rotateZ(.9deg) translate3d(4px, -5px, 28px); }
+  .hero-panorama:hover .panorama-metrics { transform: rotateY(-7deg) rotateZ(1.2deg) translate3d(7px, -3px, 2px); }
+  .hero-panorama:hover .panorama-lingua { transform: rotateY(-2deg) rotateZ(-1.15deg) translate3d(-4px, -7px, 76px); }
 }
 
 .hero {
   column-gap: 10vw;
   row-gap: clamp(8px, 1vw, 20px);
 }
-
-.hero-apps-composite img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.hero-apps-composite picture { display: block; }
 
 .appearance-controls { display: flex; gap: 8px; align-items: center; }
 .appearance-group { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 99px; background: color-mix(in srgb, var(--cream) 72%, transparent); }
@@ -1183,10 +1239,17 @@ footer { position: relative; }
 .palette-random:hover, .palette-random:focus-visible { background: var(--orange); color: var(--cream); }
 
 @media (max-width: 760px) {
-  .hero-apps-composite {
+  .hero-panorama {
     width: min(100%, 640px);
     margin: 46px auto 0;
+    aspect-ratio: .86 / 1;
   }
+
+  .panorama-layer { filter: drop-shadow(0 12px 14px rgb(15 34 39 / 0.13)); transform: none; }
+  .panorama-neon { top: 4%; left: 3%; width: 94%; }
+  .panorama-gitbird { top: 9%; left: 47%; width: 48%; }
+  .panorama-metrics { top: 16%; left: 70%; width: 27%; }
+  .panorama-lingua { top: 47%; left: 47%; width: 30%; }
 
   .appearance-controls { gap: 5px; }
   .appearance-group { padding: 2px; }
