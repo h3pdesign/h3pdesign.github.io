@@ -26,6 +26,9 @@
 
 .site-header > * { position: relative; }
 
+nav a[aria-current='page'] { color: var(--orange); font-weight: 600; }
+section[id] { scroll-margin-top: 96px; }
+
 .brand-mark {
   box-shadow: 0 0 0 5px rgba(235, 113, 62, 0.12), 0 5px 14px rgba(20, 47, 43, 0.12);
 }

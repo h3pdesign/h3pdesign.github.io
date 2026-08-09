@@ -226,6 +226,25 @@
       };
     });
 
+    const sectionLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+    const observedSections = sectionLinks
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+    const setCurrentSection = (section) => {
+      sectionLinks.forEach((link) => {
+        const isCurrent = link.getAttribute('href') === `#${section.id}`;
+        if (isCurrent) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    if ('IntersectionObserver' in window) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setCurrentSection(visible.target);
+      }, { rootMargin: '-18% 0px -68% 0px', threshold: [0.1, 0.35, 0.6] });
+      observedSections.forEach((section) => sectionObserver.observe(section));
+    }
+
     const hero = document.querySelector('.hero');
     if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
       hero.addEventListener('pointermove', (event) => {
