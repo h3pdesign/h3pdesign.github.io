@@ -23,6 +23,7 @@ The site is built around a quiet, editorial interface:
 
 - Responsive light and dark modes
 - Multiple color palettes with keyboard-visible focus states
+- A single Appearance menu with all ten palettes and persistent mode preferences
 - Responsive AVIF/WebP project imagery with explicit dimensions
 - Automatic latest-release messaging sourced from GitHub Releases
 - Asset files organized under [`assets/`](assets/)
@@ -43,6 +44,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 index.html          Portfolio page and interactive behavior
 styles.css          Base layout and typography
 portfolio-media.css Theme, media, responsive, and component styles
+refinements.css     Button, appearance-menu, and alignment refinements
 assets/             Icons, screenshots, previews, and responsive variants
 ```
 

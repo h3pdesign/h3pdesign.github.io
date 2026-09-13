@@ -24,14 +24,15 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="portfolio-media.css">
+  <link rel="stylesheet" href="refinements.css">
 </head>
 <body>
   <a class="skip-link" href="#work">Skip to selected work</a>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="h3p home"><span class="brand-mark">h</span><span>h3p</span></a>
     <nav aria-label="Primary navigation">
-      <a href="#work">Work</a><a href="#repositories">Repositories</a><a href="#about">About</a><a href="#writing">Writing</a><a href="#support">Support</a><a href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <div class="appearance-controls" aria-label="Appearance controls"><div class="appearance-group" role="group" aria-label="Light and dark appearance"><button type="button" data-mode-control="system" aria-pressed="false">Auto</button><button type="button" data-mode-control="light" aria-pressed="false">Light</button><button type="button" data-mode-control="dark" aria-pressed="false">Dark</button></div><div class="appearance-group palette-group" id="palette-controls" role="group" aria-label="Color theme"></div><button class="palette-random" id="palette-random" type="button" title="Choose a random color theme">Random</button></div>
+      <a href="#work">Work</a><a href="#writing">Writing</a><a href="#about">About</a><a class="nav-github" href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <details class="appearance-menu"><summary>Appearance</summary><div class="appearance-controls" aria-label="Appearance controls"><div class="appearance-group" role="group" aria-label="Light and dark appearance"><button type="button" data-mode-control="system" aria-pressed="false">Auto</button><button type="button" data-mode-control="light" aria-pressed="false">Light</button><button type="button" data-mode-control="dark" aria-pressed="false">Dark</button></div><div class="appearance-group palette-group" id="palette-controls" role="group" aria-label="Color theme"></div><button class="palette-random" id="palette-random" type="button" title="Choose a random color theme">Random</button></div></details>
     </nav>
   </header>
 
@@ -42,10 +43,10 @@
         <h1>Software with<br><em>a point of view.</em></h1>
         <p class="lede">Apps, systems, and field notes made with care.</p>
         <p class="hero-detail">I build native Apple tools, calm interfaces, and reliable systems for people who care how software feels.</p>
-        <div class="hero-actions"><a class="button primary" href="#work">Explore the work <span>↓</span></a><a class="button secondary" href="https://github.com/h3pdesign" target="_blank" rel="noreferrer">Contact on GitHub ↗</a></div>
+        <div class="hero-actions"><a class="button primary" href="#work">Explore the work <span>↓</span></a><a class="button secondary" href="https://h3p.me" target="_blank" rel="noreferrer">Creative portfolio ↗</a></div>
       </div>
       <div class="hero-aside">
-        <div class="signal"><span></span><div><b>Currently building</b><strong>Neon Vision Editor</strong><small>Native · fast · readable</small></div><img class="signal-icon" src="assets/neon-icon.png" alt="Neon Vision Editor icon"></div>
+        <div class="signal"><span></span><div><b>Currently building</b><strong>Neon Vision Editor</strong><small>Native · fast · readable</small></div><img class="signal-icon" src="assets/neon-icon.png" width="48" height="48" alt=""></div>
         <div class="app-orbit" aria-label="Selected h3p apps"><span class="app-orbit-label">A SMALL ECOSYSTEM</span><div class="app-orbit-icons"><a class="orbit-app neon" href="https://h3pdesign.github.io/Neon-Vision-Editor/" aria-label="Explore Neon Vision Editor"><img src="assets/neon-icon.png" alt=""><span>Neon</span></a><a class="orbit-app gitbird" href="https://github.com/h3pdesign/GitBird" aria-label="Explore GitBird"><img src="assets/gitbird-icon.png" alt=""><span>GitBird</span></a><a class="orbit-app lingua" href="https://h3pdesign.github.io/Lingua-Latina-Public/" aria-label="Explore Lingua Latina"><img src="assets/lingua-latina-icon.png" alt=""><span>Lingua<br>Latina</span></a><a class="orbit-app metrics" href="https://h3pdesign.github.io/Metrics-Data-Public/" aria-label="Explore Metrics Data"><img src="assets/metrics-data-icon.png" alt=""><span>Metrics<br>Data</span></a></div><p class="app-orbit-caption">Also shipping GitBird, Lingua Latina, and Metrics Data.</p></div>
         <div class="hero-note">Focused software over feature overload.<br>Performance, clarity, long-term usefulness.</div>
       </div>
@@ -81,7 +82,7 @@
       <div class="repository-register">
         <section class="repo-cluster"><div class="repo-cluster-head"><p>APPS</p><span>SHIPPING SOFTWARE</span></div><div class="repository-list"><a class="repo-row repo-neon is-featured" href="https://github.com/h3pdesign/Neon-Vision-Editor" target="_blank" rel="noreferrer"><span class="repo-mark mark-app"><img src="assets/neon-icon.png" alt=""></span><span class="repo-kind">PRODUCT</span><span class="repo-copy"><strong>Neon Vision Editor</strong><small>Native macOS, iPadOS, iOS, and visionOS editor.</small></span><span class="repo-status released">Released</span><b>↗</b></a><a class="repo-row repo-lingua is-featured" href="https://github.com/h3pdesign/Lingua-Latina-Public" target="_blank" rel="noreferrer"><span class="repo-mark mark-app"><img src="assets/lingua-latina-icon.png" alt=""></span><span class="repo-kind">PRODUCT</span><span class="repo-copy"><strong>Lingua Latina</strong><small>Public information for a native language-learning app.</small></span><span class="repo-status progress">In progress</span><b>↗</b></a><a class="repo-row repo-metrics is-featured" href="https://github.com/h3pdesign/Metrics-Data-Public" target="_blank" rel="noreferrer"><span class="repo-mark mark-app"><img src="assets/metrics-data-icon.png" alt=""></span><span class="repo-kind">PRODUCT</span><span class="repo-copy"><strong>Metrics Data</strong><small>Publisher KPIs for AdSense, GA4, widgets, and Apple Watch.</small></span><span class="repo-status released">Released</span><b>↗</b></a></div></section>
         <section class="repo-cluster"><div class="repo-cluster-head"><p>OPEN SOURCE &amp; TOOLING</p><span>PUBLIC INFRASTRUCTURE</span></div><div class="repository-list"><a class="repo-row repo-gitbird" href="https://github.com/h3pdesign/GitBird" target="_blank" rel="noreferrer"><span class="repo-mark mark-app"><img src="assets/gitbird-icon.png" alt=""></span><span class="repo-kind">OPEN SOURCE</span><span class="repo-copy"><strong>GitBird</strong><small>Native macOS notifications for GitHub and GitLab.</small></span><span class="repo-status active">Active</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/data-reliability-index" target="_blank" rel="noreferrer"><span class="repo-mark mark-code">&lt;/&gt;</span><span class="repo-kind">DATA</span><span class="repo-copy"><strong>Data Reliability Index</strong><small>Python tooling for trust, provenance, and data quality.</small></span><span class="repo-status maintained">Maintained</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/Universal-Coding" target="_blank" rel="noreferrer"><span class="repo-mark mark-code">{ }</span><span class="repo-kind">TOOLING</span><span class="repo-copy"><strong>Universal Coding</strong><small>Shared coding guidance and automation across projects.</small></span><span class="repo-status active">Active</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/SwiftUI-Agent-Skill" target="_blank" rel="noreferrer"><span class="repo-mark mark-code">✦</span><span class="repo-kind">SKILL</span><span class="repo-copy"><strong>SwiftUI Agent Skill</strong><small>Focused guidance for building and reviewing SwiftUI apps.</small></span><span class="repo-status maintained">Maintained</span><b>↗</b></a></div></section>
-        <section class="repo-cluster"><div class="repo-cluster-head"><p>DISTRIBUTION &amp; PORTFOLIO</p><span>PUBLIC SURFACES</span></div><div class="repository-list"><a class="repo-row" href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer"><span class="repo-mark mark-site"><img src="assets/apps-h3p-icon.png" alt=""></span><span class="repo-kind">PLATFORM</span><span class="repo-copy"><strong>appsh3p</strong><small>App documentation, release tooling, and product portal.</small></span><span class="repo-status maintained">Maintained</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/homebrew-tap" target="_blank" rel="noreferrer"><span class="repo-mark mark-package"></span><span class="repo-kind">DISTRIBUTION</span><span class="repo-copy"><strong>Homebrew Tap</strong><small>Distribution support for h3p’s macOS applications.</small></span><span class="repo-status maintained">Maintained</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/h3pdesign" target="_blank" rel="noreferrer"><span class="repo-mark mark-site"><img src="assets/favicon.svg" alt=""></span><span class="repo-kind">PORTFOLIO</span><span class="repo-copy"><strong>h3pdesign.github.io</strong><small>This portfolio and the public work index.</small></span><span class="repo-status active">Active</span><b>↗</b></a></div></section>
+        <section class="repo-cluster"><div class="repo-cluster-head"><p>DISTRIBUTION &amp; PORTFOLIO</p><span>PUBLIC SURFACES</span></div><div class="repository-list"><a class="repo-row" href="https://github.com/h3pdesign/appsh3p" target="_blank" rel="noreferrer"><span class="repo-mark mark-site"><img src="assets/apps-h3p-icon.png" alt=""></span><span class="repo-kind">PLATFORM</span><span class="repo-copy"><strong>appsh3p</strong><small>App documentation, release tooling, and product portal.</small></span><span class="repo-status maintained">Maintained</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/homebrew-tap" target="_blank" rel="noreferrer"><span class="repo-mark mark-package"></span><span class="repo-kind">DISTRIBUTION</span><span class="repo-copy"><strong>Homebrew Tap</strong><small>Distribution support for h3p’s macOS applications.</small></span><span class="repo-status maintained">Maintained</span><b>↗</b></a><a class="repo-row" href="https://github.com/h3pdesign/h3pdesign.github.io" target="_blank" rel="noreferrer"><span class="repo-mark mark-site"><img src="assets/favicon.svg" alt=""></span><span class="repo-kind">PORTFOLIO</span><span class="repo-copy"><strong>h3pdesign.github.io</strong><small>This portfolio and the public work index.</small></span><span class="repo-status active">Active</span><b>↗</b></a></div></section>
       </div>
     </section>
 
@@ -110,19 +111,16 @@
       verdant: { label: 'Verdant', swatch: '#39786e' }, tangerine: { label: 'Tangerine', swatch: '#d85d38' }, dusk: { label: 'Dusk', swatch: '#7562ca' }, coast: { label: 'Coast', swatch: '#277a9a' }, plum: { label: 'Plum', swatch: '#8c568e' }, sunbeam: { label: 'Sunbeam', swatch: '#c58b23' }, stone: { label: 'Stone', swatch: '#59636a' }, ember: { label: 'Ember', swatch: '#b94d3d' }, lagoon: { label: 'Lagoon', swatch: '#2c8496' }, orchard: { label: 'Orchard', swatch: '#758a3d' }
     };
     const systemAppearance = matchMedia('(prefers-color-scheme: dark)');
-    let mode = localStorage.getItem(modeKey) || localStorage.getItem('h3p-theme') || 'system';
-    let palette = localStorage.getItem(paletteKey) || 'verdant';
+    const readPreference = (key) => { try { return localStorage.getItem(key); } catch { return null; } };
+    const savePreference = (key, value) => { try { localStorage.setItem(key, value); } catch {} };
+    let mode = readPreference(modeKey) || readPreference('h3p-theme') || 'system';
+    let palette = readPreference(paletteKey) || 'verdant';
     if (!modes.includes(mode)) mode = 'system';
     if (!palettes.includes(palette)) palette = 'verdant';
 
-    const randomPalettes = () => {
-      const options = palettes.filter((item) => item !== palette).sort(() => Math.random() - 0.5).slice(0, 2);
-      return [palette, ...options].sort(() => Math.random() - 0.5);
-    };
-
     const renderPaletteControls = () => {
       paletteGroup.replaceChildren();
-      randomPalettes().forEach((paletteName) => {
+      palettes.forEach((paletteName) => {
         const control = document.createElement('button');
         const swatch = document.createElement('i');
         control.type = 'button';
@@ -130,7 +128,7 @@
         control.setAttribute('aria-pressed', 'false');
         control.style.setProperty('--swatch', paletteDetails[paletteName].swatch);
         control.append(swatch, paletteDetails[paletteName].label);
-        control.onclick = () => { palette = paletteName; localStorage.setItem(paletteKey, palette); renderPaletteControls(); applyAppearance(); };
+        control.onclick = () => { palette = paletteName; savePreference(paletteKey, palette); applyAppearance(); };
         paletteGroup.append(control);
       });
       paletteControls = [...paletteGroup.querySelectorAll('[data-palette-control]')];
@@ -157,8 +155,8 @@
 
     renderPaletteControls();
     applyAppearance();
-    modeControls.forEach((control) => { control.onclick = () => { mode = control.dataset.modeControl; localStorage.setItem(modeKey, mode); applyAppearance(); }; });
-    paletteRandom.onclick = () => { palette = palettes.filter((item) => item !== palette)[Math.floor(Math.random() * (palettes.length - 1))]; localStorage.setItem(paletteKey, palette); renderPaletteControls(); applyAppearance(); };
+    modeControls.forEach((control) => { control.onclick = () => { mode = control.dataset.modeControl; savePreference(modeKey, mode); applyAppearance(); }; });
+    paletteRandom.onclick = () => { palette = palettes.filter((item) => item !== palette)[Math.floor(Math.random() * (palettes.length - 1))]; savePreference(paletteKey, palette); renderPaletteControls(); applyAppearance(); };
     systemAppearance.addEventListener('change', () => { if (mode === 'system') applyAppearance(); });
 
     const latestRelease = document.querySelector('#latest-release');
@@ -219,11 +217,28 @@
           filter.classList.toggle('is-selected', selected);
           filter.setAttribute('aria-pressed', selected);
         });
+        document.querySelectorAll('.daily-feature-card').forEach((card) => {
+          card.hidden = intent !== 'all' && !card.dataset.intents.split(' ').includes(intent);
+        });
+        document.querySelectorAll('.daily-feature').forEach((section) => {
+          section.hidden = ![...section.querySelectorAll('.daily-feature-card')].some((card) => !card.hidden);
+        });
         projects.forEach((project) => {
           const matches = intent === 'all' || project.dataset.intents.split(' ').includes(intent);
           project.hidden = featuredProjects.includes(project) || !matches;
         });
       };
+    });
+
+    const appearanceMenu = document.querySelector('.appearance-menu');
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && appearanceMenu.open) {
+        appearanceMenu.open = false;
+        appearanceMenu.querySelector('summary').focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (!appearanceMenu.contains(event.target)) appearanceMenu.open = false;
     });
 
     const sectionLinks = [...document.querySelectorAll('nav a[href^="#"]')];
@@ -232,18 +247,28 @@
       .filter(Boolean);
     const setCurrentSection = (section) => {
       sectionLinks.forEach((link) => {
-        const isCurrent = link.getAttribute('href') === `#${section.id}`;
-        if (isCurrent) link.setAttribute('aria-current', 'page');
+        const isCurrent = section && link.getAttribute('href') === `#${section.id}`;
+        if (isCurrent) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
     };
-    if ('IntersectionObserver' in window) {
-      const sectionObserver = new IntersectionObserver((entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setCurrentSection(visible.target);
-      }, { rootMargin: '-18% 0px -68% 0px', threshold: [0.1, 0.35, 0.6] });
-      observedSections.forEach((section) => sectionObserver.observe(section));
-    }
+    let navigationFramePending = false;
+    const updateCurrentSection = () => {
+      const current = observedSections.find((section) => {
+        const bounds = section.getBoundingClientRect();
+        return bounds.top <= innerHeight * 0.35 && bounds.bottom > innerHeight * 0.35;
+      });
+      setCurrentSection(current);
+      navigationFramePending = false;
+    };
+    addEventListener('scroll', () => {
+      if (!navigationFramePending) {
+        navigationFramePending = true;
+        requestAnimationFrame(updateCurrentSection);
+      }
+    }, { passive: true });
+    addEventListener('resize', updateCurrentSection);
+    updateCurrentSection();
 
     const hero = document.querySelector('.hero');
     if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {

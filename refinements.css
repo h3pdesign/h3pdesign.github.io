@@ -1,0 +1,57 @@
+/* Small refinements on the original portfolio layout. */
+[hidden] { display: none !important; }
+#top { scroll-margin-top: 100px; }
+:root[data-theme="light"][data-palette="sunbeam"] { --emphasis: #785314; }
+:root { --headline-accent: #275b9b; }
+:root[data-palette='tangerine'] { --headline-accent: #12657c; }
+:root[data-palette='dusk'] { --headline-accent: #826013; }
+:root[data-palette='coast'] { --headline-accent: #a44525; }
+:root[data-palette='plum'] { --headline-accent: #47701d; }
+:root[data-palette='sunbeam'] { --headline-accent: #6547a6; }
+:root[data-palette='stone'] { --headline-accent: #96432c; }
+:root[data-palette='ember'] { --headline-accent: #006b79; }
+:root[data-palette='lagoon'] { --headline-accent: #a53b51; }
+:root[data-palette='orchard'] { --headline-accent: #7d469d; }
+:root[data-theme='dark'] { --headline-accent: #83b9ff; }
+:root[data-theme='dark'][data-palette='tangerine'] { --headline-accent: #74d5ee; }
+:root[data-theme='dark'][data-palette='dusk'] { --headline-accent: #efcc73; }
+:root[data-theme='dark'][data-palette='coast'] { --headline-accent: #ffab84; }
+:root[data-theme='dark'][data-palette='plum'] { --headline-accent: #bce383; }
+:root[data-theme='dark'][data-palette='sunbeam'] { --headline-accent: #c5a5ff; }
+:root[data-theme='dark'][data-palette='stone'] { --headline-accent: #ffab8b; }
+:root[data-theme='dark'][data-palette='ember'] { --headline-accent: #70dbe9; }
+:root[data-theme='dark'][data-palette='lagoon'] { --headline-accent: #ff9dae; }
+:root[data-theme='dark'][data-palette='orchard'] { --headline-accent: #d7a4f4; }
+:is(a, button, summary):focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+.site-header { height: auto; min-height: 76px; padding: 14px max(24px, calc((100vw - 1160px) / 2)); gap: 24px; background: var(--paper); }
+.site-header nav { gap: 26px; }
+.site-header::before, .site-header::after { display: none; }
+.site-header nav > a { display: inline-block; font-size: 14px; color: var(--ink); }
+.site-header nav > a[aria-current='location'] { text-decoration: underline; text-underline-offset: 7px; }
+.appearance-menu { position: relative; }
+.appearance-menu summary { cursor: pointer; padding: 11px 14px; border: 1px solid var(--line); border-radius: 30px; font-size: 13px; }
+.appearance-controls { position: absolute; z-index: 30; top: calc(100% + 12px); right: 0; width: min(340px, calc(100vw - 40px)); padding: 20px; display: grid; gap: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: 0 12px 30px #0002; }
+.appearance-group { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; border: 0; background: none; }
+.appearance-group button, .palette-random { min-height: 40px; font-size: 12px; padding: 9px 12px; color: var(--ink); border: 1px solid var(--line); }
+.appearance-group button.is-selected { background: var(--ink); color: var(--paper); }
+
+.hero h1 em, [data-theme='dark'] .hero h1 em { color: var(--headline-accent); }
+.hero-actions .button { min-height: 48px; padding: 14px 20px; font-size: 14px; border-radius: 999px; }
+.hero-actions .button.primary { box-shadow: none; border: 1px solid color-mix(in srgb, var(--lime) 42%, var(--line)); }
+.hero-actions .button.secondary { border: 1px solid var(--button-line); }
+.signal { display: grid; grid-template-columns: 10px minmax(0, 1fr) 48px; align-items: center; gap: 14px; padding: 22px; }
+.signal > span { margin: 0; }
+.signal > div { min-width: 0; }
+.signal strong { font-size: clamp(23px, 2.2vw, 30px); line-height: 1.18; overflow-wrap: normal; }
+.signal-icon { position: static; width: 48px; height: 48px; margin: 0; align-self: center; object-fit: contain; }
+@media (max-width: 600px) {
+  .site-header { padding: 12px 18px; gap: 12px; flex-wrap: wrap; }
+  .site-header .brand { font-size: 22px; }
+  .site-header nav { gap: 16px; flex: 1; justify-content: flex-end; }
+  .site-header nav > a { font-size: 13px; }
+  .site-header .nav-github { display: none; }
+  .appearance-menu summary { font-size: 12px; padding: 10px; }
+  .signal { padding: 20px; gap: 12px; }
+  .hero-actions { display: flex; flex-wrap: wrap; }
+}
+

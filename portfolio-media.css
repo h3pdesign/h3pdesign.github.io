@@ -1446,7 +1446,8 @@ body {
 }
 .signal { align-items: center; padding: 18px; }
 .signal > span { flex: 0 0 auto; margin-top: 0; }
-.signal-icon { margin-left: auto; }
+.signal > div { flex: 1 1 auto; min-width: 0; }
+.signal-icon { position: static; flex: 0 0 auto; margin-left: auto; object-fit: contain; }
 .app-orbit { padding: 19px 18px 17px; }
 .hero-note { margin: 0 6px; }
 .hero-panorama { margin-top: clamp(10px, 2vw, 28px); }
