@@ -74,6 +74,10 @@
 .project-image.liquid > picture img { object-fit: contain; object-position: center; }
 .project.app-card[data-project='liquid'] { --app-tint: var(--panel); }
 .daily-feature-card[data-project='liquid'] { --daily-tint: var(--panel); }
+.project-image.morphia { background: var(--panel); }
+.project-image.morphia > picture img { object-fit: contain; object-position: center; }
+.project.app-card[data-project='morphia'] { --app-tint: var(--panel); }
+.daily-feature-card[data-project='morphia'] { --daily-tint: var(--panel); }
 @media (max-width: 600px) {
   .site-header { padding: 12px 18px; gap: 12px; flex-wrap: wrap; }
   .site-header .brand { font-size: 22px; }
